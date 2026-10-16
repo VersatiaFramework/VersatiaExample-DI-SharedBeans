@@ -8,9 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger
 
 /** One instance for the whole server; every plugin that depends on this one and asks for a `Clock` gets it. */
 @ExposeSingleton
-class Clock {
+class Clock(plugin: ProviderPlugin) {
     init {
-        log("created, instance ${System.identityHashCode(this)}")
+        plugin.logger.info("Clock created, instance ${System.identityHashCode(this)}")
     }
 }
 
@@ -20,7 +20,7 @@ class Session(val plugin: VersatiaPlugin) {
     val id = counter.incrementAndGet()
 
     init {
-        log("created session #$id for ${plugin.name}")
+        plugin.logger.info("Session #$id created for ${plugin.name}")
     }
 
     private companion object {
@@ -30,8 +30,8 @@ class Session(val plugin: VersatiaPlugin) {
 
 /** Local: visible to the consumer's compiler, but not injectable there. */
 @LocalBean
-class ProviderReport(clock: Clock, session: Session) {
+class ProviderReport(clock: Clock, session: Session, plugin: ProviderPlugin) {
     init {
-        log("clock instance ${System.identityHashCode(clock)}, session #${session.id}")
+        plugin.logger.info("ProviderReport: clock instance ${System.identityHashCode(clock)}, session #${session.id}")
     }
 }
