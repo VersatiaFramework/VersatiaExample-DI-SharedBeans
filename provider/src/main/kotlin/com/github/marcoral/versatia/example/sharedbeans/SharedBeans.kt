@@ -5,12 +5,13 @@ import com.github.marcoral.versatia.di.ExposePrototype
 import com.github.marcoral.versatia.di.ExposeSingleton
 import com.github.marcoral.versatia.di.LocalBean
 import java.util.concurrent.atomic.AtomicInteger
+import java.util.logging.Logger
 
 /** One instance for the whole server; every plugin that depends on this one and asks for a `Clock` gets it. */
 @ExposeSingleton
-class Clock(plugin: ProviderPlugin) {
+class Clock(logger: Logger) {
     init {
-        plugin.logger.info("Clock created, instance ${System.identityHashCode(this)}")
+        logger.info("Clock created, instance ${System.identityHashCode(this)}")
     }
 }
 
@@ -30,8 +31,8 @@ class Session(val plugin: VersatiaPlugin) {
 
 /** Local: visible to the consumer's compiler, but not injectable there. */
 @LocalBean
-class ProviderReport(clock: Clock, session: Session, plugin: ProviderPlugin) {
+class ProviderReport(clock: Clock, session: Session, logger: Logger) {
     init {
-        plugin.logger.info("ProviderReport: clock instance ${System.identityHashCode(clock)}, session #${session.id}")
+        logger.info("ProviderReport: clock instance ${System.identityHashCode(clock)}, session #${session.id}")
     }
 }
