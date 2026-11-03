@@ -1,8 +1,8 @@
-package com.github.marcoral.versatia.example.sharedbeans.consumer
+package dev.versatia.example.sharedbeans.consumer
 
-import com.github.marcoral.versatia.di.LocalBean
-import com.github.marcoral.versatia.example.sharedbeans.Clock
-import com.github.marcoral.versatia.example.sharedbeans.Session
+import dev.versatia.di.LocalBean
+import dev.versatia.example.sharedbeans.Clock
+import dev.versatia.example.sharedbeans.Session
 import java.util.logging.Logger
 
 /** `Clock` is the provider's instance; `Session` is a new one made for this plugin, and it knows it. */

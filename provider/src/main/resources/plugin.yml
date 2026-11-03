@@ -1,6 +1,6 @@
 name: VersatiaExample-DI-SharedBeans-Provider
 version: '${version}'
-main: com.github.marcoral.versatia.example.sharedbeans.ProviderPlugin
+main: dev.versatia.example.sharedbeans.ProviderPlugin
 api-version: '1.21'
 author: Versatia
 description: Exposes a singleton and a prototype bean.

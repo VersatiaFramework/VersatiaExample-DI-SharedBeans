@@ -1,9 +1,9 @@
-package com.github.marcoral.versatia.example.sharedbeans
+package dev.versatia.example.sharedbeans
 
-import com.github.marcoral.versatia.VersatiaPlugin
-import com.github.marcoral.versatia.di.ExposePrototype
-import com.github.marcoral.versatia.di.ExposeSingleton
-import com.github.marcoral.versatia.di.LocalBean
+import dev.versatia.VersatiaPlugin
+import dev.versatia.di.ExposePrototype
+import dev.versatia.di.ExposeSingleton
+import dev.versatia.di.LocalBean
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.logging.Logger
 

@@ -2,9 +2,9 @@
 
 Two plugins: a provider exposing a singleton and a prototype, and a consumer that lists it under `depend:` and injects both.
 
-Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Beans across plugins](https://versatiaframework.github.io/VersatiaDocs/docs/dependency-injection/cross-plugin).
+Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Beans across plugins](https://versatia.dev/docs/dependency-injection/cross-plugin).
 
-**Start with** [`provider/.../SharedBeans.kt`](provider/src/main/kotlin/com/github/marcoral/versatia/example/sharedbeans/SharedBeans.kt), then [`consumer/.../Report.kt`](consumer/src/main/kotlin/com/github/marcoral/versatia/example/sharedbeans/consumer/Report.kt).
+**Start with** [`provider/.../SharedBeans.kt`](provider/src/main/kotlin/dev/versatia/example/sharedbeans/SharedBeans.kt), then [`consumer/.../Report.kt`](consumer/src/main/kotlin/dev/versatia/example/sharedbeans/consumer/Report.kt).
 
 ## What the log shows
 
@@ -30,7 +30,7 @@ Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExa
 
 Requires JDK 21 and VersatiaAPI in your
 local Maven repository (`./gradlew publishToMavenLocal` in each checkout; see
-[Building the framework](https://versatiaframework.github.io/VersatiaDocs/docs/contributing/building));
+[Building the framework](https://versatia.dev/docs/contributing/building));
 running it requires a Paper 1.21.4 server with VersatiaCore installed.
 
 ```bash
